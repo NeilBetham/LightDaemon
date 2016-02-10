@@ -20,6 +20,7 @@ void loop(){
   uint8_t received_count = 0;
   
   Serial.readBytes((char*)buffer, LED_COUNT*3);
+  Serial.print(0);
   
   for(int index = 0; index < LED_COUNT; ++index){
     strip.setPixelColor(index, buffer[(index * 3) + 1], buffer[(index * 3) + 2], buffer[index * 3]);
